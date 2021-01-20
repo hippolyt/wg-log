@@ -1,1 +1,1 @@
-chromium.browser index.html
+chromium-browser index.html
