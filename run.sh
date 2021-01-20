@@ -4,7 +4,7 @@ git pull
 
 
 echo "installing"
-cp wg-log.desktop /etc/xdg/autostart
+sudo cp wg-log.desktop /etc/xdg/autostart
 
 
 echo "press any key to cancel startup"
