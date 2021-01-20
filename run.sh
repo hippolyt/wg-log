@@ -17,7 +17,6 @@ read -n 1 -t 10 myKey
 if [ $? = 0 ] ; then
     exit;
 else
-    chromium-browser --start-fullscreen index.html
+    chromium-browser --kiosk --disable-infobars --app=index.html
 fi
 
-# in final version use --kiosk to disable keyboard input
