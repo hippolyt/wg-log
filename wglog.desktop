@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=wg-log
+Name=wglog
 Comment=WG-Log
 NoDisplay=false
 Exec=/usr/bin/lxterminal -e /home/pi/Desktop/wg-log/run.sh
