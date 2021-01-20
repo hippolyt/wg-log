@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="tea_bottle.ico">
+        <title>Drinkers' Diary</title>
+        <style>
+            body{
+                background: #333;
+                font-family: monospace;
+                text-align: center;
+                user-select: none;
+            }
+            .wrapper{
+                width: 100%;
+                margin: 8% auto;
+            }
+            .panels {
+                position: relative;
+                top: 20%;
+                list-style-type: none;
+                padding: 0;
+                margin: 8% auto;
+            }
+            .panels li {
+                position: relative;
+                width: 100%;
+                height: 25%;
+                margin: 0;
+                display: block;
+                box-sizing: border-box;
+            }
+            .panels li div{
+                border: darkgray;
+                display: inline-block;
+                width: 10%;
+                text-align: center;
+                padding: 1% 0;
+                margin: 1%;
+            }
+            .plus {
+                background-color: greenyellow;
+                cursor: pointer;
+            }
+            .minus{
+                background-color: crimson;
+                cursor: pointer;
+            }
+            .name{
+                background-color: #ffe555;
+            }
+            .score{
+                background-color: lightblue;
+            }
+
+            .choosePrompt{
+                position: relative;
+                margin: auto;
+                background-color: #ffe555c0; 
+                width: 75%;
+                padding: 0.7%;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <ul class="panels">
+                <li class="user">
+                    <div class="name">Mr. Krister</div>
+                    <div class="score">0</div>
+                    <div class="plus">Take one</div>
+                    <div class="minus">Give one back</div>
+                </li>
+                <li class="user">
+                    <div class="name">1st Claas</div>
+                    <div class="score">0</div>
+                    <div class="plus">Take one</div>
+                    <div class="minus">Give one back</div>
+                </li>
+                <li class="user">
+                    <div class="name">Mr. Thias</div>
+                    <div class="score">0</div>
+                    <div class="plus">Take one</div>
+                    <div class="minus">G  ive one back</div>
+                </li>
+                <li class="user">
+                    <div class="name">Mrs. Greater</div>
+                    <div class="score">0</div>
+                    <div class="plus">Take one</div>
+                    <div class="minus">Give one back</div>
+                </li>
+                <li class="user">
+                    <div class="name">Mrs. Linar</div>
+                    <div class="score">0</div>
+                    <div class="plus">Take one</div>
+                    <div class="minus">Give one back</div>
+                </li>
+                <li class="user">
+                    <div class="name">Mrs. Alliola</div>
+                    <div class="score">0</div>
+                    <div class="plus">Take one</div>
+                    <div class="minus">Give one back</div>
+                </li>
+            </ul>
+            <div class="choosePrompt"><h1>Welcome, traveler! Would you like a drink?</h1></div>
+        </div>
+        <script>
+            const users = document.querySelectorAll('.user');
+            users.forEach(user => {
+                user.name = user.querySelector('.name').innerText
+
+                storedScore = localStorage.getItem(user.name);
+                if(storedScore){
+                    user.score = storedScore;  
+                }
+                else {
+                    user.score = 0;
+                }
+                user.querySelector('.score').textContent = user.score;
+
+                user.querySelector('.plus').onclick = () => {
+                    user.score++;
+                    user.querySelector('.score').textContent = user.score;
+                    localStorage.setItem(user.name, user.score);
+                }
+                user.querySelector('.minus').onclick = () => {
+                    user.score--
+                    user.querySelector('.score').textContent = user.score;
+                    localStorage.setItem(user.name, user.score);
+                }
+            });
+        </script>
+    </body>
+</html>
