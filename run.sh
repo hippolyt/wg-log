@@ -1,11 +1,13 @@
 #!/bin/bash
-echo "press any key to cancel startup"
-read -n 1 -t 10 myKey
 
 echo "updating"
 cd /home/pi/Desktop/wg-log
-git pull
-
+changed=1
+git pull | grep -q 'Already up to date.' && changed=0
+if [ $changed = 1 ]; then   # Restart script if there was an update
+    ./run.sh
+    exit;
+fi
 
 echo "installing"
 # Startup initialization
