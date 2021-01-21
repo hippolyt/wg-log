@@ -5,6 +5,7 @@ cd /home/pi/Desktop/wg-log
 changed=1
 git pull | grep -q 'Already up to date.' && changed=0
 if [ $changed = 1 ]; then   # Restart script if there was an update
+    sleep 1
     ./run.sh
     exit;
 fi
@@ -23,6 +24,6 @@ read -n 1 -t 10 myKey
 if [ $? = 0 ] ; then
     exit;
 else
-    chromium-browser --kiosk --disable-infobars --app=index.html
+    chromium-browser --kiosk --disable-infobars index.html
 fi
 
