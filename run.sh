@@ -24,7 +24,7 @@ if [ $? = 0 ] ; then
 else
     cat ~/.config/chromium/Default/Preferences
     jq '.profile.exit_type= "Normal" | .profile.exited_cleanly = true' ~/.config/chromium/Default/Preferences | jq .
-    sleep 20
+    sleep 21
     jq '.profile.exit_type= "Normal" | .profile.exited_cleanly = true' ~/.config/chromium/Default/Preferences > ~/.config/chromium/Default/Preferences
     chromium-browser --kiosk --disable-infobars --app=index.html
 fi
