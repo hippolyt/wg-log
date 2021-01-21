@@ -1,5 +1,4 @@
 # Todo:
-
 - [x] Set cookie / File / any local storage
 - [x] Run on Pi (pull git and execute in local browser?)
 - [ ] Use CSS grid for positioning
