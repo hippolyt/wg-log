@@ -1,7 +1,5 @@
 # Todo:
 
------------------------
-
 - [x] Set cookie / File / any local storage
 - [x] Run on Pi (pull git and execute in local browser?)
 - [ ] Use CSS grid for positioning
@@ -13,3 +11,8 @@
 - [x] make a mechanic for regular updates
 - [x] lock the pi to only display the page
 - [ ] cycle the background joke daily
+- [ ] Add evaluation function for payday and drink reordering
+- [ ] Improve design with bootstrap
+- [ ] Use an icon from heroicons.dev
+- [ ] Test icons from fontawesome.com
+- [ ] Branch off for reworks
