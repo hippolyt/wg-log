@@ -20,7 +20,9 @@ read -n 1 -t 10 myKey
 if [ $? = 0 ] ; then
     exit;
 else
-    jq '.profile.exit_type= "Normal" | .profile.exited_cleanly = true' ~pi/.config/chromium/Default/Preferences > ~pi/.config/chromium/Default/Preferences
+    cat ~/.config/chromium/Default/Preferences
+    sleep 20
+    jq '.profile.exit_type= "Normal" | .profile.exited_cleanly = true' ~/.config/chromium/Default/Preferences > ~/.config/chromium/Default/Preferences
     chromium-browser --kiosk --disable-infobars --app=index.html
 fi
 
