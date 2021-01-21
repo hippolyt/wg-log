@@ -11,11 +11,12 @@ if [ $changed = 1 ]; then   # Restart script if there was an update
 fi
 
 echo "installing"
-# Startup initialization
+# Autostart initialization
 sudo cp wglog.desktop /etc/xdg/autostart/wglog.desktop 
 sudo chmod 644 /etc/xdg/autostart/wglog.desktop 
 
-# Delete Chrome Crash Logs
+echo "preparing"
+# Delete chromium Crash error message
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/Default/Preferences
 sed -i 's/"exit_type": "Crashed"/"exit_type": "Normal"/' ~/.config/chromium/Default/Preferences
 
